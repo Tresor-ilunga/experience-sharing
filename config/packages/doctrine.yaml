@@ -19,6 +19,18 @@ doctrine:
                 dir: '%kernel.project_dir%/src/Domain/Shared/Entity'
                 prefix: 'Domain\Shared\Entity'
 
+            Domain\Link\Entity:
+                is_bundle: false
+                type: xml
+                dir: '%kernel.project_dir%/src/Infrastructure/Link/Doctrine/Mapping/Entity'
+                prefix: 'Domain\Link\Entity'
+
+            Domain\Link\ValueObject:
+                is_bundle: false
+                type: xml
+                dir: '%kernel.project_dir%/src/Infrastructure/Link/Doctrine/Mapping/ValueObject'
+                prefix: 'Domain\Link\ValueObject'
+
 
 when@test:
     doctrine:

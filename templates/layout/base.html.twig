@@ -1,0 +1,45 @@
+{% apply spaceless %}
+    <!DOCTYPE html>
+    <html lang="{{ app.request.locale() | default('fr') }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="devscast">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>{% block title %}{% endblock %} | sharing hexa</title>
+
+        <link rel="stylesheet" href="{{ asset('/css/dashlite.min.css') }}">
+        {{ encore_entry_script_tags('app') }}
+        <script src="{{ asset('/js/bundle.js') }}"></script>
+        <script src="{{ asset('/js/scripts.js') }}"></script>
+    </head>
+    <body class="nk-body bg-theme has-sidebar ui-shady">
+
+    <div class="nk-app-root">
+        <div class="nk-main">
+            {% include 'component/_sidebar.html.twig' %}
+            <div class="nk-wrap">
+                {% include 'component/_navbar.html.twig' %}
+                <div class="nk-content">
+                    <div class="container-fluid">
+                        <div class="nk-content-inner">
+                            {% block body %}
+                                <div class="nk-content-body">
+                                    <div class="mx-auto">
+                                        {% include 'component/_flash.html.twig' %}
+                                        {% block header %}{% endblock %}
+                                        <div class="nk-block">
+                                            {% block content %}{% endblock %}
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endblock %}
+                        </div>
+                    </div>
+                </div>
+                {% include 'component/_footer.html.twig' %}
+            </div>
+        </div>
+    </div>
+    </body>
+    </html>
+{% endapply %}

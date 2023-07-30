@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping xmlns="https://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="https://doctrine-project.org/schemas/orm/doctrine-mapping
+                          https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+    <entity
+            name="Domain\Link\Entity\LinkVisit"
+            repository-class="Infrastructure\Link\Doctrine\Repository\LinkVisitRepository"
+            table="link_visit"
+    >
+        <unique-constraints>
+            <unique-constraint columns="ip,link_id" />
+        </unique-constraints>
+
+
+        <id name="id" type="uuid" column="id" unqiue="true">
+            <generator strategy="CUSTOM"/>
+            <custom-id-generator class="doctrine.uuid_generator"/>
+        </id>
+
+        <field name="ip" type="string" nullable="true" />
+        <field name="referer" type="string" nullable="true" />
+        <field name="user_agent" type="string" nullable="true" />
+
+        <!-- value objects-->
+        <embedded name="location" class="Domain\Link\ValueObject\Location" use-column-prefix="true" />
+        <embedded name="device" class="Domain\Link\ValueObject\Device" use-column-prefix="true" />
+
+        <many-to-one field="link" target-entity="Domain\Link\Entity\Link" >
+            <join-column on-delete="CASCADE" nullable="false" />
+        </many-to-one>
+
+        <!-- Timestamp -->
+        <field name="created_at" type="datetime_immutable"/>
+        <field name="updated_at" type="datetime_immutable" nullable="true"/>
+    </entity>
+</doctrine-mapping>

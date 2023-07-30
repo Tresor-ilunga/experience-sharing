@@ -7,6 +7,7 @@ namespace Infrastructure\Link\Doctrine\Repository;
 use Doctrine\Persistence\ManagerRegistry;
 use Domain\Link\Entity\Link;
 use Domain\Link\Repository\LinkRepositoryInterface;
+use Infrastructure\Shared\Doctrine\Repository\AbstractRepository;
 
 /**
  * class LinkRepository.
@@ -15,7 +16,7 @@ use Domain\Link\Repository\LinkRepositoryInterface;
  *
  * @author tresor-ilunga <ilungat82@gmail.com>
  */
-final class LinkRepository implements LinkRepositoryInterface
+final class LinkRepository extends AbstractRepository implements LinkRepositoryInterface
 {
     public function __construct(ManagerRegistry $registry)
     {

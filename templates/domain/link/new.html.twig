@@ -1,0 +1,30 @@
+{% extends 'layout/base.html.twig' %}
+{% block title "création du lien" %}
+
+{% block header %}
+    {% embed 'component/_header.html.twig' %}
+        {% block header_title "Création du lien" %}
+        {% block header_action_list %}
+            <li>
+                <a href="{{ path('app_link_index') }}" class="btn btn-white btn-dim btn-outline-light">
+                    <span>tous les liens</span>
+                    {# {{ 'arrow-long-left' | icon }} #}
+                </a>
+            </li>
+        {% endblock %}
+    {% endembed %}
+{% endblock %}
+
+{% block content %}
+    {% embed "component/_card.html.twig" %}
+        {% block card_body %}
+            {{ form_start(form) }}
+            {{ form_rest(form) }}
+            <button class="mt-3 btn btn-primary">
+                {# {{ 'save-fill' | icon }} #}
+                <span>Envoyer</span>
+            </button>
+            {{ form_end(form) }}
+        {% endblock %}
+    {% endembed %}
+{% endblock %}

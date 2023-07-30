@@ -13,6 +13,7 @@
         "doctrine/orm": "^2.15",
         "embed/embed": "^4.4",
         "geoip2/geoip2": "^2.13",
+        "knplabs/knp-paginator-bundle": "^6.2",
         "matomo/device-detector": "^6.1",
         "mobiledetect/mobiledetectlib": "^3.74",
         "phpdocumentor/reflection-docblock": "^5.3",
@@ -45,6 +46,7 @@
         "symfony/web-link": "6.3.*",
         "symfony/yaml": "6.3.*",
         "twig/extra-bundle": "^2.12|^3.0",
+        "twig/string-extra": "^3.7",
         "twig/twig": "^2.12|^3.0"
     },
     "config": {

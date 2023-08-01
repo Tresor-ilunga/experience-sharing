@@ -1,0 +1,10 @@
+{% for message in app.flashes('success') %}
+    <app-toast type="success" message="{{ message }}"></app-toast>
+{% endfor %}
+{% for message in app.flashes('error') %}
+    <app-toast type="error" message="{{ message }}"></app-toast>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+{% endfor %}

@@ -23,4 +23,8 @@ final class LinkRepository extends AbstractRepository implements LinkRepositoryI
         parent::__construct($registry, Link::class);
     }
 
+    public function isUniqueSlug(string $slug): bool
+    {
+        return true;
+    }
 }

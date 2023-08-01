@@ -1,0 +1,46 @@
+{
+  "dependencies": {
+    "axios": "^1.4.0",
+    "filemanager-element": "^0.1.2",
+    "flatpickr": "^4.6.13",
+    "htm": "^3.1.1",
+    "scriptjs": "^2.5.9",
+    "stimulus": "^3.2.1",
+    "stimulus-use": "^0.52.0",
+    "sweetalert2": "^11.7.20",
+    "tom-select": "^2.2.2"
+  },
+  "license": "CC-BY-NC-SA-4.0",
+  "private": true,
+  "scripts": {
+    "dev-server": "encore dev-server",
+    "dev": "encore dev",
+    "watch": "encore dev --watch",
+    "build": "encore production --progress"
+  },
+  "devDependencies": {
+    "@hotwired/stimulus": "^3.2.1",
+    "@hotwired/turbo": "^7.3.0",
+    "@symfony/stimulus-bridge": "^3.2.2",
+    "@symfony/webpack-encore": "^4.4.0",
+    "autoprefixer": "^10.4.14",
+    "chart.js": "^4.3.2",
+    "core-js": "^3.32.0",
+    "cropperjs": "^1.5.13",
+    "postcss": "^8.4.27",
+    "postcss-import": "^15.1.0",
+    "postcss-loader": "^7.3.3",
+    "regenerator-runtime": "^0.13.11",
+    "sass": "^1.64.2",
+    "sass-loader": "^13.3.2",
+    "tailwindcss": "^3.3.3",
+    "webpack-notifier": "^1.15.0",
+    "workbox-cacheable-response": "^7.0.0",
+    "workbox-expiration": "^7.0.0",
+    "workbox-navigation-preload": "^7.0.0",
+    "workbox-precaching": "^7.0.0",
+    "workbox-routing": "^7.0.0",
+    "workbox-strategies": "^7.0.0",
+    "workbox-window": "^7.0.0"
+  }
+}

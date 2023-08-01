@@ -8,13 +8,17 @@ use Application\Link\Command\CreateLinkCommand;
 use Domain\Link\Entity\Link;
 use Domain\Link\Repository\LinkRepositoryInterface;
 use Infrastructure\Link\Symfony\Form\CreateLinkForm;
+use Infrastructure\Shared\Symfony\Controller\FlashMessageTrait;
+use Infrastructure\Shared\Symfony\Messenger\CommandBusAwareDispatchTrait;
 use Knp\Component\Pager\PaginatorInterface;
+use Psr\Log\LoggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Routing\Requirement\Requirement;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
  * Class LinkController
@@ -22,16 +26,29 @@ use Symfony\Component\Routing\Requirement\Requirement;
  * @author tresor-ilunga <ilungat82@gmail.com>
  */
 #[Route('/link', name: 'app_link_')] // app_link_
-final class LinkController extends AbstractController
+class LinkController extends AbstractController
 {
-    public function __construct(private readonly MessageBusInterface $commandBus)
+    use CommandBusAwareDispatchTrait;
+    use FlashMessageTrait;
+    public function __construct(protected readonly MessageBusInterface $commandBus,
+                protected readonly LoggerInterface $logger,
+                protected readonly TranslatorInterface $translator)
     {
     }
 
     #[Route('', name: 'index', methods: ['GET'])]
     public function index(LinkRepositoryInterface $repository, PaginatorInterface $paginator, Request $request): Response
     {
-        return $this->render('domain/link/index.html.twig');
+        return $this->render(
+            view: 'domain/link/index.html.twig',
+            parameters: [
+                'data' => $paginator->paginate(
+                    target: $repository->findBy([], ['created_at' => 'DESC']),
+                    page: $request->query->getInt('page', 1),
+                    limit: 50
+                )
+            ]
+        );
     }
 
     #[Route('/new', name: 'new', methods: ['GET', 'POST'])]
@@ -42,15 +59,20 @@ final class LinkController extends AbstractController
             ->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->commandBus->dispatch($command);
-            return $this->redirectToRoute('app_link_index');
+            try {
+                $this->dispatchSync($command);
+                return $this->redirectToRoute('app_link_index');
+            }catch (\Throwable $e) {
+                $this->addSafeMessageExceptionFlash($e);
+            }
         }
 
         return $this->render(
             view: 'domain/link/new.html.twig',
             parameters: [
                 'form' => $form
-            ]
+            ],
+            response: new Response(status: 422)
         );
     }
 

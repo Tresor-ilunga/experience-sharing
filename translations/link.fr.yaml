@@ -1,0 +1,7 @@
+link.forms.labels.url: Lien à raccourcir
+link.forms.labels.slug: Slug
+link.forms.labels.description: Description
+link.forms.labels.has_automatic_redirect: Redirection automatique ?
+link.forms.labels.redirect_delay: Délai de redirection
+
+link.exceptions.non_unique_slug: Désolé vous ne pouvez pas créer deux liens avec le même slug

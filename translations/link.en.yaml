@@ -1,0 +1,7 @@
+link.forms.labels.url: the link to shorten
+link.forms.labels.slug: Slug
+link.forms.labels.description: Description
+link.forms.labels.has_automatic_redirect: has automatic redirect ?
+link.forms.labels.redirect_delay: redirect delay
+
+link.exceptions.non_unique_slug: Sorry this slug is already used.

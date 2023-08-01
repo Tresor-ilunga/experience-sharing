@@ -1,0 +1,7 @@
+Domain\Link\Entity\Link:
+  link (template):
+    id: <uuid()>
+    url: <url()>
+    slug: <slug()>
+    created_at: <dateTimeThisYear('now')>
+    description: <realText(250)>

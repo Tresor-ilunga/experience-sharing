@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Domain\Shared\Entity;
 
+
 use Symfony\Component\Uid\Uuid;
 
-
 /**
- * trait IdentityTrait.
+ * Trait IdentityTrait.
  *
  * @author tresor-ilunga <ilungat82@gmail.com>
  */

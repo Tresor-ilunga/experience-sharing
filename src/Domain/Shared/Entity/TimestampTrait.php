@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Domain\Shared\Entity;
 
 /**
- * Trait TimestampTrait
+ * Trait TimestampTrait.
  *
  * @author tresor-ilunga <ilungat82@gmail.com>
  */

@@ -7,7 +7,7 @@ namespace Application\Link\Service;
 use Domain\Link\ValueObject\Location;
 
 /**
- * Class IpAddressLocatorServiceInterface
+ * interface IpAddressLocatorService.
  *
  * @author tresor-ilunga <ilungat82@gmail.com>
  */

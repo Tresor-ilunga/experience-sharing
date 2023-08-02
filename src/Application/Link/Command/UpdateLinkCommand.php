@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Application\Link\Command;
 
-//use Application\Shared\Mapper;
+use Application\Shared\Mapper;
 use Domain\Link\Entity\Link;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -23,6 +23,6 @@ final class UpdateLinkCommand
         #[Assert\GreaterThanOrEqual(5)] #[Assert\LessThanOrEqual(60)]
         public int $redirect_delay = 5
     ) {
-       // Mapper::hydrate($this->_entity, $this);
+        Mapper::hydrate($this->_entity, $this);
     }
 }

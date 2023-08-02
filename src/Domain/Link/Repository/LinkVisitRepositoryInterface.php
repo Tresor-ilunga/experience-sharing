@@ -8,7 +8,7 @@ use Domain\Link\Entity\Link;
 use Domain\Shared\Repository\DataRepositoryInterface;
 
 /**
- * Class LinkVisitRepositoryInterface.
+ * Interface LinkVisitRepositoryInterface.
  *
  * @author tresor-ilunga <ilungat82@gmail.com>
  */

@@ -7,7 +7,7 @@ namespace Application\Link\Service;
 use Domain\Link\ValueObject\Device;
 
 /**
- * Class DeviceDetectorService
+ * interface DeviceDetectorService.
  *
  * @author tresor-ilunga <ilungat82@gmail.com>
  */

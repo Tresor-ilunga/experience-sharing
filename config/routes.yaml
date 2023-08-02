@@ -1,6 +1,6 @@
 controllers:
     resource: ../src/Infrastructure/
-    type: attribute
+    type: annotation
     schemes:
         - HTTP
         - HTTPS

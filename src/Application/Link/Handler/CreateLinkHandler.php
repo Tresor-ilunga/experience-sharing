@@ -31,8 +31,8 @@ final class CreateLinkHandler
      */
     public function __invoke(CreateLinkCommand $command): void
     {
-        if ($this->repository->isUniqueSlug($command->slug)){
-            throw new NonUniqueSlugException(); // 'The slug already exists'
+        if ($this->repository->isUniqueSlug($command->slug)) {
+            throw new NonUniqueSlugException();
         }
 
         if ($command->slug === null) {

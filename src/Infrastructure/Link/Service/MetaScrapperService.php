@@ -9,13 +9,12 @@ use Domain\Link\ValueObject\LinkMeta;
 use Embed\Embed;
 
 /**
- * Class MetaScrapperServiceInterface
+ * class MetaScrapperService.
  *
  * @author tresor-ilunga <ilungat82@gmail.com>
  */
 final class MetaScrapperService implements MetaScrapperServiceInterface
 {
-
     public function getMeta(string $url): ?LinkMeta
     {
         try {

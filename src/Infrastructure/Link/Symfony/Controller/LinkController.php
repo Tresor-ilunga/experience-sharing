@@ -6,6 +6,7 @@ namespace Infrastructure\Link\Symfony\Controller;
 
 use Application\Link\Command\CreateLinkCommand;
 use Domain\Link\Entity\Link;
+use Domain\Link\Exception\NonUniqueSlugException;
 use Domain\Link\Repository\LinkRepositoryInterface;
 use Infrastructure\Link\Symfony\Form\CreateLinkForm;
 use Infrastructure\Shared\Symfony\Controller\FlashMessageTrait;
@@ -18,27 +19,33 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Routing\Requirement\Requirement;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
- * Class LinkController
+ * class LinkController.
  *
  * @author tresor-ilunga <ilungat82@gmail.com>
  */
-#[Route('/link', name: 'app_link_')] // app_link_
+#[Route('/link', name: 'app_link_')]
 class LinkController extends AbstractController
 {
     use CommandBusAwareDispatchTrait;
     use FlashMessageTrait;
-    public function __construct(protected readonly MessageBusInterface $commandBus,
-                protected readonly LoggerInterface $logger,
-                protected readonly TranslatorInterface $translator)
-    {
+
+    public function __construct(
+        protected readonly MessageBusInterface $commandBus,
+        protected readonly LoggerInterface $logger,
+        protected readonly TranslatorInterface $translator
+    ) {
     }
 
     #[Route('', name: 'index', methods: ['GET'])]
-    public function index(LinkRepositoryInterface $repository, PaginatorInterface $paginator, Request $request): Response
-    {
+    public function index(
+        LinkRepositoryInterface $repository,
+        PaginatorInterface $paginator,
+        Request $request
+    ): Response {
         return $this->render(
             view: 'domain/link/index.html.twig',
             parameters: [
@@ -60,9 +67,9 @@ class LinkController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             try {
-                $this->dispatchSync($command);
-                return $this->redirectToRoute('app_link_index');
-            }catch (\Throwable $e) {
+               $this->dispatchSync($command);
+               return $this->redirectToRoute('app_link_index');
+            } catch (\Throwable $e) {
                 $this->addSafeMessageExceptionFlash($e);
             }
         }
@@ -88,7 +95,7 @@ class LinkController extends AbstractController
         return $this->render('domain/link/edit.html.twig');
     }
 
-    #[Route('/delete/{id}', name: 'delete', requirements: ['id' => Requirement::UUID], methods: ['DELETE'])]
+    #[Route('/{id}', name: 'delete', requirements: ['id' => Requirement::UUID], methods: ['DELETE'])]
     public function delete(Link $link, Request $request): Response
     {
         return $this->redirectToRoute('app_link_index');

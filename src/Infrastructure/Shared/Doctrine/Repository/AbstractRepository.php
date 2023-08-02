@@ -15,6 +15,8 @@ use Domain\Shared\Repository\DataRepositoryInterface;
 
 /**
  * @template E of object
+ *
+ * @author tresor-ilunga <ilungat82@gmail.com>
  */
 abstract class AbstractRepository extends ServiceEntityRepository implements DataRepositoryInterface
 {

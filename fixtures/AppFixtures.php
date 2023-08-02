@@ -17,7 +17,7 @@ use Symfony\Component\HttpKernel\KernelInterface;
  * while keeping the possibility to use fixtures in php if needed
  *
  * @package App\Fixtures
- * @author tresor-ilunga <ilungat82@gmail.com>
+ * @author bernard-ng <bernard@devscast.tech>
  */
 class AppFixtures extends Fixture
 {

@@ -1,13 +1,13 @@
 include:
-  - templates.yaml
+    - templates.yaml
 
 Domain\Link\Entity\Link:
-  link{1..500} (extends link):
+    link{1..500} (extends link):
 
 Domain\Authentication\Entity\User:
-  user_admin (extends user):
-    username: admin
-    email: admin\@admin.com
-    roles: ['ROLE_ADMIN']
+    user_admin (extends user):
+        username: admin
+        email: admin\@admin.com
+        roles: ['ROLE_ADMIN']
 
-  user{1..10} (extends user):
+    user{1..10} (extends user):

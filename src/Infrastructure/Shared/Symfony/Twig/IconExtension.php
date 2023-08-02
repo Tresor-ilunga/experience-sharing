@@ -9,7 +9,7 @@ use Twig\TwigFilter;
 use Twig\TwigFunction;
 
 /**
- * Class IconExtension
+ * Class IconExtension.
  *
  * @author tresor-ilunga <ilungat82@gmail.com>
  */

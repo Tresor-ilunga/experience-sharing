@@ -34,6 +34,6 @@ final class RedirectController extends AbstractController
             server: $request->server->all(),
             link: $link
         ));
-        return new RedirectResponse($link->getUrl());
+       return new RedirectResponse($link->getUrl());
     }
 }

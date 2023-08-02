@@ -3,10 +3,11 @@
 declare(strict_types=1);
 
 namespace Application\Link\Command;
+
 use Domain\Link\Entity\Link;
 
 /**
- * Class CreateLinkCommand
+ * Class CreateLinkVisitCommand
  *
  * @author tresor-ilunga <ilungat82@gmail.com>
  */

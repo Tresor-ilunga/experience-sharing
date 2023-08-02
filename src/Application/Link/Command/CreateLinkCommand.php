@@ -3,10 +3,11 @@
 declare(strict_types=1);
 
 namespace Application\Link\Command;
+
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * Class CreateLinkCommand
+ * class CreateLinkCommand.
  *
  * @author tresor-ilunga <ilungat82@gmail.com>
  */

@@ -10,6 +10,7 @@ use Application\Link\Service\IpAddressLocatorServiceInterface;
 use Domain\Link\Entity\LinkVisit;
 use Domain\Link\Repository\LinkRepositoryInterface;
 use Domain\Link\Repository\LinkVisitRepositoryInterface;
+use Infrastructure\Link\Doctrine\Repository\LinkRepository;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 
 /**

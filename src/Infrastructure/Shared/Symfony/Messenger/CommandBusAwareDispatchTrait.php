@@ -11,7 +11,7 @@ use Symfony\Component\Messenger\Stamp\HandledStamp;
 use Throwable;
 
 /**
- * Class CommandBusAwareDispatchTrait.
+ * Class CommandBusAwareDispatchTrait
  *
  * @author tresor-ilunga <ilungat82@gmail.com>
  */

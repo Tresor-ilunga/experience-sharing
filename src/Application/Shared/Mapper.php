@@ -13,6 +13,14 @@ use Symfony\Component\PropertyAccess\PropertyAccess;
  */
 final class Mapper
 {
+    /**
+     * This method hydrates an object from another object.
+     *
+     * @param object $source
+     * @param object $destination
+     * @param array $ignore
+     * @return void
+     */
     public static function hydrate(object $source, object $destination, array $ignore = []): void
     {
         $propertyAccessor = PropertyAccess::createPropertyAccessorBuilder()
@@ -28,6 +36,13 @@ final class Mapper
         }
     }
 
+    /**
+     * This method returns an array from an object.
+     *
+     * @param object $source
+     * @param array $ignore
+     * @return array
+     */
     public static function toArray(object $source, array $ignore = []): array
     {
         $propertyAccessor = PropertyAccess::createPropertyAccessorBuilder()
@@ -45,6 +60,14 @@ final class Mapper
         return $data;
     }
 
+    /**
+     * This method hydrates an object from an array.
+     *
+     * @param array $source
+     * @param object $destination
+     * @param array $ignore
+     * @return void
+     */
     public static function fromArray(array $source, object $destination, array $ignore = []): void
     {
         $propertyAccessor = PropertyAccess::createPropertyAccessorBuilder()
@@ -58,6 +81,14 @@ final class Mapper
         }
     }
 
+    /**
+     * This method returns a hydrated object.
+     *
+     * @param object $source
+     * @param object $destination
+     * @param array $ignore
+     * @return object
+     */
     public static function getHydratedObject(object $source, object $destination, array $ignore = []): object
     {
         self::hydrate($source, $destination, $ignore);
@@ -65,6 +96,13 @@ final class Mapper
         return $destination;
     }
 
+    /**
+     * This method checks if the given object has the given properties.
+     *
+     * @param object $source
+     * @param array $properties
+     * @return bool
+     */
     public static function hasProperties(object $source, array $properties): bool
     {
         foreach ($properties as $property) {

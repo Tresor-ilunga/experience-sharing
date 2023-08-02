@@ -15,6 +15,9 @@ use Twig\TwigFunction;
  */
 final class IconExtension extends AbstractExtension
 {
+    /**
+     * @return TwigFunction[]
+     */
     public function getFunctions(): array
     {
         return [
@@ -22,6 +25,9 @@ final class IconExtension extends AbstractExtension
         ];
     }
 
+    /**
+     * @return TwigFilter[]
+     */
     public function getFilters(): array
     {
         return [
@@ -29,6 +35,10 @@ final class IconExtension extends AbstractExtension
         ];
     }
 
+    /**
+     * @param string $name
+     * @return string
+     */
     public function icon(string $name): string
     {
         return <<< HTML

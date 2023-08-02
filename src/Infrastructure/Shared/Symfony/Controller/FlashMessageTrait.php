@@ -8,6 +8,7 @@ use Domain\Shared\Exception\SafeMessageException;
 use Symfony\Component\Form\FormError;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Security\Core\Exception\CustomUserMessageAuthenticationException;
+use Throwable;
 
 /**
  * trait FlashMessageTrait.
@@ -16,19 +17,31 @@ use Symfony\Component\Security\Core\Exception\CustomUserMessageAuthenticationExc
  */
 trait FlashMessageTrait
 {
-    protected function addSafeMessageExceptionFlash(\Throwable $e): void
+    /**
+     * @param Throwable $e
+     * @return void
+     */
+    protected function addSafeMessageExceptionFlash(Throwable $e): void
     {
         $message = $this->getSafeMessageException($e);
         $this->logger->error($e->getMessage(), $e->getTrace());
         $this->addFlash('error', $message);
     }
 
-    protected function addSafeMessageExceptionError(\Throwable $e): FormError
+    /**
+     * @param Throwable $e
+     * @return FormError
+     */
+    protected function addSafeMessageExceptionError(Throwable $e): FormError
     {
         return new FormError($this->getSafeMessageException($e));
     }
 
-    protected function getSafeMessageException(\Throwable $e): string
+    /**
+     * @param Throwable $e
+     * @return string
+     */
+    protected function getSafeMessageException(Throwable $e): string
     {
         $previous = $e->getPrevious();
 
@@ -56,6 +69,9 @@ trait FlashMessageTrait
         };
     }
 
+    /**
+     * @return void
+     */
     protected function addSomethingWentWrongFlash(): void
     {
         $this->addFlash('error', $this->translator->trans(
@@ -65,6 +81,10 @@ trait FlashMessageTrait
         ));
     }
 
+    /**
+     * @param string|null $action
+     * @return void
+     */
     protected function addSuccessfullActionFlash(?string $action = null): void
     {
         $this->addFlash('success', $this->translator->trans(
@@ -76,6 +96,12 @@ trait FlashMessageTrait
         ));
     }
 
+    /**
+     * @param string $id
+     * @param array $parameters
+     * @param string|null $domain
+     * @return void
+     */
     protected function addSuccessFlash(string $id, array $parameters = [], ?string $domain = null): void
     {
         $this->addFlash('success', $this->translator->trans(
@@ -85,6 +111,12 @@ trait FlashMessageTrait
         ));
     }
 
+    /**
+     * @param string $id
+     * @param array $parameters
+     * @param string|null $domain
+     * @return void
+     */
     protected function addErrorFlash(string $id, array $parameters = [], ?string $domain = null): void
     {
         $this->addFlash('error', $this->translator->trans(
@@ -94,6 +126,10 @@ trait FlashMessageTrait
         ));
     }
 
+    /**
+     * @param FormInterface $form
+     * @return void
+     */
     protected function flashFormErrors(FormInterface $form): void
     {
         $errors = $this->getFormErrors($form);
@@ -104,6 +140,10 @@ trait FlashMessageTrait
         );
     }
 
+    /**
+     * @param FormInterface $form
+     * @return array
+     */
     protected function getFormErrors(FormInterface $form): array
     {
         $errors = [];

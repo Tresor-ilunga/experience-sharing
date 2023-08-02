@@ -17,11 +17,18 @@ use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 #[AsMessageHandler]
 final class UpdateLinkHandler
 {
+    /**
+     * @param LinkRepositoryInterface $repository
+     */
     public function __construct(
         private readonly LinkRepositoryInterface $repository
     ) {
     }
 
+    /**
+     * @param UpdateLinkCommand $command
+     * @return void
+     */
     public function __invoke(UpdateLinkCommand $command): void
     {
         $this->repository->save(Mapper::getHydratedObject($command, $command->_entity));

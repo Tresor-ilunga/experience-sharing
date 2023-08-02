@@ -30,17 +30,29 @@ final class LoginFormAuthenticator extends AbstractLoginFormAuthenticator
 
     private ?UserInterface $user = null;
 
+    /**
+     * @param UrlGeneratorInterface $urlGenerator
+     * @param UserRepositoryInterface $repository
+     */
     public function __construct(
         private readonly UrlGeneratorInterface $urlGenerator,
         private readonly UserRepositoryInterface $repository
     ) {}
 
 
+    /**
+     * @param Request $request
+     * @return string
+     */
     protected function getLoginUrl(Request $request): string
     {
         return $this->urlGenerator->generate('authentication_login');
     }
 
+    /**
+     * @param Request $request
+     * @return Passport
+     */
     public function authenticate(Request $request): Passport
     {
         $identifier = (string) $request->request->get('identifier', '');
@@ -63,6 +75,12 @@ final class LoginFormAuthenticator extends AbstractLoginFormAuthenticator
         return $passport;
     }
 
+    /**
+     * @param Request $request
+     * @param TokenInterface $token
+     * @param string $firewallName
+     * @return Response|null
+     */
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $firewallName): ?Response
     {
         $targetPath = $this->getTargetPath($request->getSession(), $firewallName);

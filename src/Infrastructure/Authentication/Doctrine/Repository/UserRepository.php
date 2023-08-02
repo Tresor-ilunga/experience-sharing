@@ -19,11 +19,18 @@ use Infrastructure\Shared\Doctrine\Repository\AbstractRepository;
  */
 final class UserRepository extends AbstractRepository implements UserRepositoryInterface
 {
+    /**
+     * @param ManagerRegistry $registry
+     */
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, User::class);
     }
 
+    /**
+     * @param string $email
+     * @return User|null
+     */
     public function findOneByEmail(string $email): ?User
     {
         try {
@@ -41,6 +48,10 @@ final class UserRepository extends AbstractRepository implements UserRepositoryI
         }
     }
 
+    /**
+     * @param string $username
+     * @return User|null
+     */
     public function findOneByUsername(string $username): ?User
     {
         try {
@@ -58,6 +69,10 @@ final class UserRepository extends AbstractRepository implements UserRepositoryI
         }
     }
 
+    /**
+     * @param string $emailOrUsername
+     * @return User|null
+     */
     public function findOneByEmailOrUsername(string $emailOrUsername): ?User
     {
         try {
@@ -76,6 +91,11 @@ final class UserRepository extends AbstractRepository implements UserRepositoryI
         }
     }
 
+    /**
+     * @param User $user
+     * @param string $password
+     * @return void
+     */
     public function upgradePassword(User $user, string $password): void
     {
         $user->setPassword($password);

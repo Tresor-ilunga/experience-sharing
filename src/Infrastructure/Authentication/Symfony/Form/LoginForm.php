@@ -20,11 +20,19 @@ use Symfony\Component\Security\Csrf\CsrfTokenManagerInterface;
  */
 final class LoginForm extends AbstractType
 {
+    /**
+     * @param CsrfTokenManagerInterface $csrfTokenManager
+     */
     public function __construct(
         private readonly CsrfTokenManagerInterface $csrfTokenManager
     ) {
     }
 
+    /**
+     * @param FormBuilderInterface $builder
+     * @param array $options
+     * @return void
+     */
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
@@ -49,6 +57,10 @@ final class LoginForm extends AbstractType
             ]);
     }
 
+    /**
+     * @param OptionsResolver $resolver
+     * @return void
+     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
@@ -58,6 +70,9 @@ final class LoginForm extends AbstractType
         ]);
     }
 
+    /**
+     * @return string
+     */
     public function getBlockPrefix(): string
     {
         return '';

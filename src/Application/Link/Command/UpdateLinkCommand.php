@@ -15,6 +15,13 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 final class UpdateLinkCommand
 {
+    /**
+     * @param Link $_entity
+     * @param string|null $url
+     * @param string|null $description
+     * @param bool $has_automatic_redirect
+     * @param int $redirect_delay
+     */
     public function __construct(
         public readonly Link $_entity,
         #[Assert\NotBlank] #[Assert\Url] public ?string $url = null,

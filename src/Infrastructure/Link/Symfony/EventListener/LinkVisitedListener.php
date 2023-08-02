@@ -10,6 +10,7 @@ use Domain\Link\Repository\LinkRepositoryInterface;
 use Infrastructure\Shared\Symfony\Messenger\CommandBusAwareDispatchTrait;
 use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
 use Symfony\Component\Messenger\MessageBusInterface;
+use Throwable;
 
 /**
  * Class LinkVisitedListener.
@@ -21,13 +22,16 @@ final class LinkVisitedListener
 {
     use CommandBusAwareDispatchTrait;
 
+    /**
+     * @param MessageBusInterface $bus
+     */
     public function __construct(
         private readonly MessageBusInterface $bus,
     ) {
     }
 
     /**
-     * @throws \Throwable
+     * @throws Throwable
      */
     public function __invoke(LinkVisitedEvent $event)
     {

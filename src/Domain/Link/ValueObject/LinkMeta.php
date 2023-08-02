@@ -11,6 +11,13 @@ namespace Domain\Link\ValueObject;
  */
 class LinkMeta
 {
+    /**
+     * @param string|null $title
+     * @param string|null $description
+     * @param string|null $canonical_url
+     * @param string|null $image
+     * @param string|null $favicon
+     */
     public function __construct(
         public readonly ?string $title,
         public readonly ?string $description,
@@ -20,6 +27,10 @@ class LinkMeta
     ) {
     }
 
+    /**
+     * @param array $data
+     * @return static
+     */
     public static function fromArray(array $data): self
     {
         return new self(

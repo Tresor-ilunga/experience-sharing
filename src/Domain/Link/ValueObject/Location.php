@@ -11,6 +11,14 @@ namespace Domain\Link\ValueObject;
  */
 class Location
 {
+    /**
+     * @param string|null $country
+     * @param string|null $city
+     * @param string|null $time_zone
+     * @param float|null $longitude
+     * @param float|null $latitude
+     * @param int|null $accuracy_radius
+     */
     public function __construct(
         public readonly ?string $country = null,
         public readonly ?string $city = null,
@@ -21,6 +29,10 @@ class Location
     ) {
     }
 
+    /**
+     * @param array $data
+     * @return static
+     */
     public static function fromArray(array $data): self
     {
         return new self(

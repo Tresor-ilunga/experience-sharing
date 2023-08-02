@@ -11,6 +11,12 @@ namespace Domain\Link\ValueObject;
  */
 class Device
 {
+    /**
+     * @param string|null $operating_system
+     * @param string|null $client
+     * @param string|null $device
+     * @param bool $is_bot
+     */
     public function __construct(
         public readonly ?string $operating_system = null,
         public readonly ?string $client = null,
@@ -19,6 +25,10 @@ class Device
     ) {
     }
 
+    /**
+     * @param array $data
+     * @return static
+     */
     public static function fromArray(array $data): self
     {
         return new self(

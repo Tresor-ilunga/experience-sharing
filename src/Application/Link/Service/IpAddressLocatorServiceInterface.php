@@ -13,5 +13,9 @@ use Domain\Link\ValueObject\Location;
  */
 interface IpAddressLocatorServiceInterface
 {
+    /**
+     * @param string $ip
+     * @return Location|null
+     */
     public function getLocation(string $ip): ?Location;
 }

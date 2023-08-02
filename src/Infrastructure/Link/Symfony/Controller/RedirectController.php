@@ -20,11 +20,19 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 final class RedirectController extends AbstractController
 {
+    /**
+     * @param EventDispatcherInterface $dispatcher
+     */
     public function __construct(
         private readonly EventDispatcherInterface $dispatcher
     ) {
     }
 
+    /**
+     * @param Request $request
+     * @param Link $link
+     * @return Response
+     */
     #[Route('/r/{slug}', name: 'app_redirect', methods: ['GET'])]
     public function index(Request $request, Link $link): Response
     {

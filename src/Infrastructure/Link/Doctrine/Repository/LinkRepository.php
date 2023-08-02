@@ -18,11 +18,18 @@ use Infrastructure\Shared\Doctrine\Repository\AbstractRepository;
  */
 final class LinkRepository extends AbstractRepository implements LinkRepositoryInterface
 {
+    /**
+     * @param ManagerRegistry $registry
+     */
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Link::class);
     }
 
+    /**
+     * @param string $slug
+     * @return bool
+     */
     public function isUniqueSlug(string $slug): bool
     {
         return true;

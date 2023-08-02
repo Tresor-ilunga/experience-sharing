@@ -21,11 +21,19 @@ use Infrastructure\Shared\Doctrine\Repository\AbstractRepository;
  */
 final class LinkVisitRepository extends AbstractRepository implements LinkVisitRepositoryInterface
 {
+    /**
+     * @param ManagerRegistry $registry
+     */
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, LinkVisit::class);
     }
 
+    /**
+     * @param string $ip
+     * @param Link $link
+     * @return bool
+     */
     public function hasAlreadyBeenVisited(string $ip, Link $link): bool
     {
         try {

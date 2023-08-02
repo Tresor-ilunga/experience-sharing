@@ -20,6 +20,10 @@ final class IpAddressLocatorService implements IpAddressLocatorServiceInterface
     ) {
     }
 
+    /**
+     * @param string $ip
+     * @return Location|null
+     */
     public function getLocation(string $ip): ?Location
     {
        try {

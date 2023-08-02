@@ -13,6 +13,12 @@ use Domain\Link\Entity\Link;
  */
 final class CreateLinkVisitCommand
 {
+    /**
+     * @param Link $link
+     * @param string|null $ip
+     * @param string|null $user_agent
+     * @param array|null $server
+     */
     public function __construct(
         public readonly Link $link,
         public readonly ?string $ip,

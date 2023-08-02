@@ -13,5 +13,10 @@ use Domain\Link\ValueObject\Device;
  */
 interface DeviceDetectorServiceInterface
 {
+    /**
+     * @param string $user_agent
+     * @param array $server
+     * @return Device|null
+     */
     public function getDevice(string $user_agent, array $server): ?Device;
 }

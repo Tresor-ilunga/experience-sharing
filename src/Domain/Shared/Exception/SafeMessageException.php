@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Domain\Shared\Exception;
 
+use Throwable;
+
 /**
  * Class SafeMessageException
  *
@@ -15,7 +17,13 @@ class SafeMessageException extends \DomainException
     protected string $messageDomain = 'messages';
     protected array $messageData = [];
 
-    public function __construct(string $message = '', array $messageData = [], int $code = 0, \Throwable $previous = null)
+    /**
+     * @param string $message
+     * @param array $messageData
+     * @param int $code
+     * @param Throwable|null $previous
+     */
+    public function __construct(string $message = '', array $messageData = [], int $code = 0, Throwable $previous = null)
     {
         parent::__construct($message, $code, $previous);
 
@@ -34,16 +42,25 @@ class SafeMessageException extends \DomainException
         $this->messageData = $messageData;
     }
 
+    /**
+     * @return string
+     */
     public function getMessageKey(): string
     {
         return $this->messageKey;
     }
 
+    /**
+     * @return array Data to be passed into the translator
+     */
     public function getMessageData(): array
     {
         return $this->messageData;
     }
 
+    /**
+     * @return string The message domain for translation
+     */
     public function getMessageDomain(): string
     {
         return $this->messageDomain;

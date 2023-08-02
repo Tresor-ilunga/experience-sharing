@@ -21,6 +21,12 @@ use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 #[AsMessageHandler]
 final class CreateLinkVisitHandler
 {
+    /**
+     * @param LinkVisitRepositoryInterface $repository
+     * @param LinkRepositoryInterface $linkRepository
+     * @param IpAddressLocatorServiceInterface $ipAddressLocatorService
+     * @param DeviceDetectorServiceInterface $detectorService
+     */
     public function __construct(
         private readonly LinkVisitRepositoryInterface $repository,
         private readonly LinkRepositoryInterface $linkRepository,
@@ -29,6 +35,12 @@ final class CreateLinkVisitHandler
     ) {
     }
 
+    /**
+     * This method is called when the message is handled.
+     *
+     * @param CreateLinkVisitCommand $command
+     * @return void
+     */
     public function __invoke(CreateLinkVisitCommand $command): void
     {
         $command->link->setTotalVisitCount(

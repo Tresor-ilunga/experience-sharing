@@ -13,5 +13,9 @@ use Domain\Link\ValueObject\LinkMeta;
  */
 interface MetaScrapperServiceInterface
 {
+    /**
+     * @param string $url
+     * @return LinkMeta|null
+     */
    public function getMeta(string $url): ?LinkMeta;
 }

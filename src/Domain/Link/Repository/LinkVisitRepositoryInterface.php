@@ -14,5 +14,10 @@ use Domain\Shared\Repository\DataRepositoryInterface;
  */
 interface LinkVisitRepositoryInterface extends DataRepositoryInterface
 {
+    /**
+     * @param string $ip
+     * @param Link $link
+     * @return bool
+     */
     public function hasAlreadyBeenVisited(string $ip, Link $link): bool;
 }

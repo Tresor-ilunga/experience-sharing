@@ -13,6 +13,14 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 final class CreateLinkCommand
 {
+    /**
+     *
+     * @param string|null $url
+     * @param string|null $slug
+     * @param string|null $description
+     * @param bool $has_automatic_redirect
+     * @param int $redirect_delay
+     */
     public function __construct(
         #[Assert\NotBlank] #[Assert\Url] public ?string $url = null,
         #[Assert\Length(max: 255)] public ?string $slug = null,

@@ -15,6 +15,10 @@ use Embed\Embed;
  */
 final class MetaScrapperService implements MetaScrapperServiceInterface
 {
+    /**
+     * @param string $url
+     * @return LinkMeta|null
+     */
     public function getMeta(string $url): ?LinkMeta
     {
         try {

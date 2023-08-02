@@ -20,6 +20,10 @@ use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 #[AsMessageHandler]
 final class CreateLinkHandler
 {
+    /**
+     * @param LinkRepositoryInterface $repository
+     * @param MetaScrapperServiceInterface $metaScrapperService
+     */
     public function __construct(
         private readonly LinkRepositoryInterface $repository,
         private readonly MetaScrapperServiceInterface $metaScrapperService

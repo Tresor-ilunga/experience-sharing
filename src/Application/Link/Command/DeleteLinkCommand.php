@@ -13,6 +13,9 @@ use Domain\Link\Entity\Link;
  */
 final class DeleteLinkCommand
 {
+    /**
+     * @param Link $_entity
+     */
     public function __construct(
         public readonly Link $_entity
     ) {

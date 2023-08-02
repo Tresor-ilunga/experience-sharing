@@ -33,6 +33,11 @@ class LinkController extends AbstractController
     use CommandBusAwareDispatchTrait;
     use FlashMessageTrait;
 
+    /**
+     * @param MessageBusInterface $commandBus
+     * @param LoggerInterface $logger
+     * @param TranslatorInterface $translator
+     */
     public function __construct(
         protected readonly MessageBusInterface $commandBus,
         protected readonly LoggerInterface $logger,
@@ -40,6 +45,14 @@ class LinkController extends AbstractController
     ) {
     }
 
+    /**
+     * This method is used to list all links.
+     *
+     * @param LinkRepositoryInterface $repository
+     * @param PaginatorInterface $paginator
+     * @param Request $request
+     * @return Response
+     */
     #[Route('', name: 'index', methods: ['GET'])]
     public function index(
         LinkRepositoryInterface $repository,
@@ -58,6 +71,12 @@ class LinkController extends AbstractController
         );
     }
 
+    /**
+     * This method is used to create a new link.
+     *
+     * @param Request $request
+     * @return Response
+     */
     #[Route('/new', name: 'new', methods: ['GET', 'POST'])]
     public function new(Request $request): Response
     {
@@ -83,18 +102,32 @@ class LinkController extends AbstractController
         );
     }
 
+    /**
+     * @param Link $link
+     * @return Response
+     */
     #[Route('/{id}', name: 'show', requirements: ['id' => Requirement::UUID], methods: ['GET'])]
     public function show(Link $link): Response
     {
         return $this->render('domain/link/show.html.twig');
     }
 
+    /**
+     * @param Link $link
+     * @param Request $request
+     * @return Response
+     */
     #[Route('/edit/{id}', name: 'edit', requirements: ['id' => Requirement::UUID], methods: ['GET', 'POST'])]
     public function edit(Link $link, Request $request): Response
     {
         return $this->render('domain/link/edit.html.twig');
     }
 
+    /**
+     * @param Link $link
+     * @param Request $request
+     * @return Response
+     */
     #[Route('/{id}', name: 'delete', requirements: ['id' => Requirement::UUID], methods: ['DELETE'])]
     public function delete(Link $link, Request $request): Response
     {

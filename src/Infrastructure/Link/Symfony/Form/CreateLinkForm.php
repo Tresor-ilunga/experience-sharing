@@ -21,6 +21,11 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
  */
 final class CreateLinkForm extends AbstractType
 {
+    /**
+     * @param FormBuilderInterface $builder
+     * @param array $options
+     * @return void
+     */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
@@ -46,6 +51,10 @@ final class CreateLinkForm extends AbstractType
         ;
     }
 
+    /**
+     * @param OptionsResolver $resolver
+     * @return void
+     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([

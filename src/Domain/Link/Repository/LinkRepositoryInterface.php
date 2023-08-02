@@ -14,5 +14,9 @@ use Domain\Shared\Repository\DataRepositoryInterface;
  */
 interface LinkRepositoryInterface extends DataRepositoryInterface
 {
+    /**
+     * @param string $slug
+     * @return bool
+     */
     public function isUniqueSlug(string $slug): bool;
 }

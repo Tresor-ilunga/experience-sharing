@@ -13,6 +13,12 @@ use Domain\Link\Entity\Link;
  */
 final class LinkVisitedEvent
 {
+    /**
+     * @param string|null $ip
+     * @param string|null $user_agent
+     * @param array|null $server
+     * @param Link $link
+     */
     public function __construct(
         public readonly ?string $ip,
         public readonly ?string $user_agent,

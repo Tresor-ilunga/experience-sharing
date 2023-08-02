@@ -15,6 +15,9 @@ use Doctrine\Persistence\Event\LifecycleEventArgs;
  */
 final class TimestampSubscriber implements EventSubscriberInterface
 {
+    /**
+     * @return array|string[]
+     */
     public function getSubscribedEvents(): array
     {
         return [
@@ -23,6 +26,10 @@ final class TimestampSubscriber implements EventSubscriberInterface
         ];
     }
 
+    /**
+     * @param LifecycleEventArgs $args
+     * @return void
+     */
     public function prePersist(LifecycleEventArgs $args): void
     {
         $object = $args->getObject();
@@ -31,6 +38,10 @@ final class TimestampSubscriber implements EventSubscriberInterface
         }
     }
 
+    /**
+     * @param LifecycleEventArgs $args
+     * @return void
+     */
     public function postUpdate(LifecycleEventArgs $args): void
     {
         $object = $args->getObject();

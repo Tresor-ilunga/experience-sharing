@@ -29,6 +29,18 @@ doctrine:
                 dir: '%kernel.project_dir%/src/Infrastructure/Link/Doctrine/Mapping/ValueObject'
                 prefix: 'Domain\Link\ValueObject'
 
+            Domain\Authentication\Entity:
+                is_bundle: false
+                type: xml
+                dir: '%kernel.project_dir%/src/Infrastructure/Authentication/Doctrine/Mapping/Entity'
+                prefix: 'Domain\Authentication\Entity'
+
+            Domain\Authentication\ValueObject:
+                is_bundle: false
+                type: xml
+                dir: '%kernel.project_dir%/src/Infrastructure/Authentication/Doctrine/Mapping/ValueObject'
+                prefix: 'Domain\Authentication\ValueObject'
+
 
 when@test:
     doctrine:

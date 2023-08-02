@@ -1,0 +1,42 @@
+{% apply spaceless %}
+    <!DOCTYPE html>
+    <html lang="{{ app.request.locale }}" class="js">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="devscast">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="shortcut icon" href="#">
+        <title>{% block title %}Connexion{% endblock %} | link.devscast.tech</title>
+
+        <link rel="stylesheet" href="{{ asset('/css/dashlite.min.css') }}">
+        {{ encore_entry_script_tags('app') }}
+        <script src="{{ asset('/js/bundle.js') }}"></script>
+        <script src="{{ asset('/js/scripts.js') }}"></script>
+    </head>
+
+    <body class="nk-body bg-white npc-default pg-auth">
+    {% include 'component/_flash.html.twig' %}
+    <div class="nk-app-root">
+        <div class="nk-main ">
+            <div class="nk-wrap nk-wrap-nosidebar">
+                <div class="nk-content ">
+                    <div class="nk-split nk-split-page nk-split-md">
+                        <div class="nk-split-content nk-block-area nk-block-area-column nk-auth-container bg-white">
+                            <div class="nk-block nk-block-middle nk-auth-body">
+                                <div class="brand-logo pb-5">
+                                    <a href="{{ path('authentication_login') }}" class="logo-link">
+                                        <img class="logo-img logo-img-lg" src="{{ asset('/image/cells.png') }}" alt="logo">
+                                    </a>
+                                </div>
+                                {% block body %}{% endblock %}
+                            </div>
+                        </div>
+                        <div class="nk-split-content nk-split-stretch bg-abstract" style="background-image: url('https://images.pexels.com/photos/14430249/pexels-photo-14430249.jpeg?cs=srgb&dl=pexels-wendy-wei-14430249.jpg&fm=jpg&w=4160&h=6240&_gl=1*1ndmwct*_ga*MTUwNTM5MDM5OS4xNjU3NDg3MTI1*_ga_8JE65Q40S6*MTY3MTE1MTY5NC40OS4xLjE2NzExNTE3NDguMC4wLjA.'); background-size: cover"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+    </html>
+{% endapply %}

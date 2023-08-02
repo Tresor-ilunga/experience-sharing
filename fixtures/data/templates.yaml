@@ -5,3 +5,13 @@ Domain\Link\Entity\Link:
     slug: <slug()>
     created_at: <dateTimeThisYear('now')>
     description: <realText(250)>
+
+Domain\Authentication\Entity\User:
+  user (template):
+    username: user<current()>23
+    email: user_<current()>\@devscast.org
+    password: \$2y\$13\$PzaAzoYYBl1VyuAU9M/3GuFQaOgO2vyHct1iN0b4vULoIXtcBICuu # 000000
+
+    # Timestamp
+    created_at: <dateTimeThisYear()>
+    updated_at: ~

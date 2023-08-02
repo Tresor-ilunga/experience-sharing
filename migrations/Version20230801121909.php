@@ -14,7 +14,7 @@ final class Version20230801121909 extends AbstractMigration
 {
     public function getDescription(): string
     {
-        return '';
+        return 'creation de la table link et link_visit';
     }
 
     public function up(Schema $schema): void

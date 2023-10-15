@@ -31,6 +31,8 @@ final class LoginFormAuthenticator extends AbstractLoginFormAuthenticator
     private ?UserInterface $user = null;
 
     /**
+     * This method is called on every request, and its job is to read the token
+     *
      * @param UrlGeneratorInterface $urlGenerator
      * @param UserRepositoryInterface $repository
      */
@@ -41,6 +43,8 @@ final class LoginFormAuthenticator extends AbstractLoginFormAuthenticator
 
 
     /**
+     * This method is called when authentication is needed, but it's not sent
+     *
      * @param Request $request
      * @return string
      */
@@ -50,6 +54,8 @@ final class LoginFormAuthenticator extends AbstractLoginFormAuthenticator
     }
 
     /**
+     * This method is called on every request, and your job is to read the token
+     *
      * @param Request $request
      * @return Passport
      */
@@ -76,6 +82,8 @@ final class LoginFormAuthenticator extends AbstractLoginFormAuthenticator
     }
 
     /**
+     * This method is called when authentication executed and was successful!
+     *
      * @param Request $request
      * @param TokenInterface $token
      * @param string $firewallName

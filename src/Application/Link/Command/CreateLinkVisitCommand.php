@@ -14,6 +14,8 @@ use Domain\Link\Entity\Link;
 final class CreateLinkVisitCommand
 {
     /**
+     * The framework uses this constructor to instantiate the command.
+     *
      * @param Link $link
      * @param string|null $ip
      * @param string|null $user_agent

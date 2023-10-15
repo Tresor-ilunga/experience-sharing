@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Infrastructure\Shared\Doctrine\Subscriber;
 
+use DateTimeImmutable;
 use Doctrine\Bundle\DoctrineBundle\EventSubscriber\EventSubscriberInterface;
 use Doctrine\ORM\Events;
 use Doctrine\Persistence\Event\LifecycleEventArgs;
@@ -34,7 +35,7 @@ final class TimestampSubscriber implements EventSubscriberInterface
     {
         $object = $args->getObject();
         if (method_exists($object, 'setCreatedAt')) {
-            $object->setCreatedAt(new \DateTimeImmutable());
+            $object->setCreatedAt(new DateTimeImmutable());
         }
     }
 
@@ -46,7 +47,7 @@ final class TimestampSubscriber implements EventSubscriberInterface
     {
         $object = $args->getObject();
         if (method_exists($object, 'setUpdatedAt')) {
-            $object->setUpdatedAt(new \DateTimeImmutable());
+            $object->setUpdatedAt(new DateTimeImmutable());
         }
     }
 }

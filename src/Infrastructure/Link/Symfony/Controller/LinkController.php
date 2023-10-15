@@ -34,6 +34,8 @@ class LinkController extends AbstractController
     use FlashMessageTrait;
 
     /**
+     * This method is used to create a new link.
+     *
      * @param MessageBusInterface $commandBus
      * @param LoggerInterface $logger
      * @param TranslatorInterface $translator
@@ -65,7 +67,7 @@ class LinkController extends AbstractController
                 'data' => $paginator->paginate(
                     target: $repository->findBy([], ['created_at' => 'DESC']),
                     page: $request->query->getInt('page', 1),
-                    limit: 50
+                    limit: 10
                 )
             ]
         );
@@ -103,6 +105,8 @@ class LinkController extends AbstractController
     }
 
     /**
+     * This method is used to show a link.
+     *
      * @param Link $link
      * @return Response
      */
@@ -113,6 +117,8 @@ class LinkController extends AbstractController
     }
 
     /**
+     * This method is used to edit a link.
+     *
      * @param Link $link
      * @param Request $request
      * @return Response
@@ -124,6 +130,8 @@ class LinkController extends AbstractController
     }
 
     /**
+     * This method is used to delete a link.
+     *
      * @param Link $link
      * @param Request $request
      * @return Response

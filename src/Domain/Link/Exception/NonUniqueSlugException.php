@@ -8,7 +8,7 @@ use Domain\Shared\Exception\SafeMessageException;
 use Throwable;
 
 /**
- * class NonUniqueSlugException.
+ * Class NonUniqueSlugException.
  *
  * @author tresor-ilunga <ilungat82@gmail.com>
  */

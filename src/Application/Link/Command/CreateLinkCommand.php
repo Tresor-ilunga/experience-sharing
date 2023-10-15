@@ -15,6 +15,8 @@ final class CreateLinkCommand
 {
     /**
      *
+     * This is the url of the link.
+     *
      * @param string|null $url
      * @param string|null $slug
      * @param string|null $description

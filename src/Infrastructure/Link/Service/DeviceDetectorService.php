@@ -19,6 +19,8 @@ use Domain\Link\ValueObject\Device;
 final class DeviceDetectorService implements DeviceDetectorServiceInterface
 {
     /**
+     * This method returns a Device object.
+     *
      * @param string $user_agent
      * @param array $server
      * @return Device

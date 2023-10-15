@@ -11,6 +11,12 @@ namespace Application\Authentication\Command;
  */
 final class LoginCommand
 {
+    /**
+     * This is the identifier of the user.
+     *
+     * @param string|null $identifier
+     * @param string|null $password
+     */
     public function __construct(
         public ?string $identifier = null,
         public ?string $password = null

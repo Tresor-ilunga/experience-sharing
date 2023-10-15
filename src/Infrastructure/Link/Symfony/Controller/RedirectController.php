@@ -29,6 +29,8 @@ final class RedirectController extends AbstractController
     }
 
     /**
+     * This method is responsible for redirecting the user to the original URL
+     *
      * @param Request $request
      * @param Link $link
      * @return Response

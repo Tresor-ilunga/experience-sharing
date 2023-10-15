@@ -18,6 +18,8 @@ use Throwable;
 trait FlashMessageTrait
 {
     /**
+     * This method is used to add a safe message exception flash.
+     *
      * @param Throwable $e
      * @return void
      */
@@ -29,6 +31,8 @@ trait FlashMessageTrait
     }
 
     /**
+     * This method is used to add a safe message exception error.
+     *
      * @param Throwable $e
      * @return FormError
      */
@@ -38,6 +42,8 @@ trait FlashMessageTrait
     }
 
     /**
+     * This method is used to get a safe message exception.
+     *
      * @param Throwable $e
      * @return string
      */
@@ -70,6 +76,8 @@ trait FlashMessageTrait
     }
 
     /**
+     * This method is used to add a something went wrong flash message.
+     *
      * @return void
      */
     protected function addSomethingWentWrongFlash(): void
@@ -82,6 +90,8 @@ trait FlashMessageTrait
     }
 
     /**
+     * This method is used to add a success flash message.
+     *
      * @param string|null $action
      * @return void
      */
@@ -97,6 +107,8 @@ trait FlashMessageTrait
     }
 
     /**
+     * This method is used to add a success flash message.
+     *
      * @param string $id
      * @param array $parameters
      * @param string|null $domain
@@ -112,6 +124,8 @@ trait FlashMessageTrait
     }
 
     /**
+     * This method is used to add an error flash message.
+     *
      * @param string $id
      * @param array $parameters
      * @param string|null $domain
@@ -127,6 +141,8 @@ trait FlashMessageTrait
     }
 
     /**
+     * This method is used to flash form errors.
+     *
      * @param FormInterface $form
      * @return void
      */
@@ -141,6 +157,8 @@ trait FlashMessageTrait
     }
 
     /**
+     * This method is used to get all errors from a form.
+     *
      * @param FormInterface $form
      * @return array
      */

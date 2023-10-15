@@ -20,6 +20,8 @@ final class LoginFormController extends AbstractController
 {
 
     /**
+     * This method is used to display the login form
+     *
      * @param AuthenticationUtils $utils
      * @return Response
      */
@@ -45,6 +47,8 @@ final class LoginFormController extends AbstractController
 
 
     /**
+     * This method is used to logout
+     *
      * @return void
      */
     #[Route('/logout', name: 'authentication_logout', methods: ['GET'])]

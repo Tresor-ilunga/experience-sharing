@@ -21,6 +21,8 @@ use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 final class CreateLinkHandler
 {
     /**
+     * This is the constructor of the class.
+     *
      * @param LinkRepositoryInterface $repository
      * @param MetaScrapperServiceInterface $metaScrapperService
      */
@@ -31,6 +33,8 @@ final class CreateLinkHandler
     }
 
     /**
+     * This is the function that handles the command.
+     *
      * @throws NonUniqueSlugException
      */
     public function __invoke(CreateLinkCommand $command): void

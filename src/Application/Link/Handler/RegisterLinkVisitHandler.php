@@ -22,6 +22,8 @@ use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 final class RegisterLinkVisitHandler
 {
     /**
+     * This constructor is not necessary, it's here to show you that you can
+     *
      * @param LinkRepositoryInterface $linkRepository
      * @param LinkVisitRepositoryInterface $linkVisitRepository
      * @param IpAddressLocatorServiceInterface $ipLocationService
@@ -36,6 +38,8 @@ final class RegisterLinkVisitHandler
     }
 
     /**
+     * This method is not necessary, it's here to show you that you can
+     *
      * @param RegisterLinkVisitCommand $command
      * @return void
      */

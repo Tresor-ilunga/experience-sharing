@@ -33,7 +33,7 @@ final class LinkVisitedListener
     /**
      * @throws Throwable
      */
-    public function __invoke(LinkVisitedEvent $event)
+    public function __invoke(LinkVisitedEvent $event): void
     {
         $this->dispatchSync(new CreateLinkVisitCommand(
             link: $event->link,

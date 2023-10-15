@@ -21,6 +21,8 @@ final class IpAddressLocatorService implements IpAddressLocatorServiceInterface
     }
 
     /**
+     * This method returns the location of the given ip address.
+     *
      * @param string $ip
      * @return Location|null
      */

@@ -20,6 +20,8 @@ trait CommandBusAwareDispatchTrait
     protected readonly MessageBusInterface $commandBus;
 
     /**
+     * This method is used to dispatch a command asynchronously
+     *
      * @throws Throwable
      */
     protected function dispatchSync(object $command): ?Envelope
@@ -40,6 +42,8 @@ trait CommandBusAwareDispatchTrait
     }
 
     /**
+     * This method is used to dispatch a command synchronously and return the result
+     *
      * @throws Throwable
      */
     protected function getHandledResultSync(object $command): mixed

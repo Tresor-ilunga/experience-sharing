@@ -22,6 +22,8 @@ use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 final class CreateLinkVisitHandler
 {
     /**
+     * This method is called when the message is handled.
+     *
      * @param LinkVisitRepositoryInterface $repository
      * @param LinkRepositoryInterface $linkRepository
      * @param IpAddressLocatorServiceInterface $ipAddressLocatorService

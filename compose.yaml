@@ -1,0 +1,81 @@
+version: '3'
+
+services:
+  database:
+    image: mysql:8.0
+    container_name: sharing_database
+    restart: unless-stopped
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: sharing_experience
+      MYSQL_ALLOW_EMPTY_ROOT_PASSWORD: 'no'
+    volumes:
+      - mysql-data:/var/lib/mysql:rw
+      - ./var/mysql:/var/www/var
+      - ./tools/config/mysql.conf:/etc/mysql/conf.d
+    labels:
+      com.symfony.server.service-prefix: 'DATABASE'
+
+  web:
+    image: nginx:alpine
+    container_name: sharing_nginx
+    restart: unless-stopped
+    ports:
+      - "8000:80"
+    volumes:
+      - .:/var/www:delegated
+      - ./tools/config/nginx.conf:/etc/nginx/conf.d/default.conf
+    links:
+      - php
+
+  php:
+    user: '${USER_ID}:${GROUP_ID}'
+    container_name: sharing_php
+    restart: unless-stopped
+    build:
+      context: ./tools/docker/php
+    volumes:
+      - .:/var/www:delegated
+    depends_on:
+      - database
+
+  ## Development Tools
+  maildev:
+    image: mailhog/mailhog
+    container_name: sharing_maildev
+    ports:
+      - "1080:8025"
+    labels:
+      com.symfony.server.service-prefix: 'MAILER'
+
+  adminer:
+    image: adminer:4.8.1
+    container_name: sharing_adminer
+    restart: unless-stopped
+    depends_on:
+      - database
+    environment:
+      APP_ENV: dev
+      ADMINER_DESIGN: pepa-linha
+      ADMINER_DEFAULT_SERVER: database
+    ports:
+      - "8082:8080"
+
+  node:
+    container_name: sharing_node
+    restart: unless-stopped
+    user: '${USER_ID}:${GROUP_ID}'
+    build:
+      context: ./tools/docker/node
+    command: yarn run watch
+    working_dir: /home/node/app
+    volumes:
+      - ./:/home/node/app
+    ports:
+      - "3000:3000"
+
+volumes:
+  mysql-data:
+    driver:
+      local

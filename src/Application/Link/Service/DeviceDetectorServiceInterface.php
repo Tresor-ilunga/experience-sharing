@@ -9,11 +9,13 @@ use Domain\Link\ValueObject\Device;
 /**
  * interface DeviceDetectorService.
  *
- * @author tresor-ilunga <ilungat82@gmail.com>
+ * @author Trésor-ILUNGA <ilungat82@gmail.com>
  */
 interface DeviceDetectorServiceInterface
 {
     /**
+     * This method returns a Device object.
+     *
      * @param string $user_agent
      * @param array $server
      * @return Device|null

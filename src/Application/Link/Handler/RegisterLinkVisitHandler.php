@@ -16,10 +16,10 @@ use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 /**
  * class RegisterVisitHandler.
  *
- * @author tresor-ilunga <ilungat82@gmail.com>
+ * @author Trésor-ILUNGA <ilungat82@gmail.com>
  */
 #[AsMessageHandler]
-final class RegisterLinkVisitHandler
+final readonly class RegisterLinkVisitHandler
 {
     /**
      * This constructor is not necessary, it's here to show you that you can
@@ -30,10 +30,10 @@ final class RegisterLinkVisitHandler
      * @param DeviceDetectorServiceInterface $detectorService
      */
     public function __construct(
-        private readonly LinkRepositoryInterface $linkRepository,
-        private readonly LinkVisitRepositoryInterface $linkVisitRepository,
-        private readonly IpAddressLocatorServiceInterface $ipLocationService,
-        private readonly DeviceDetectorServiceInterface $detectorService,
+        private LinkRepositoryInterface          $linkRepository,
+        private LinkVisitRepositoryInterface     $linkVisitRepository,
+        private IpAddressLocatorServiceInterface $ipLocationService,
+        private DeviceDetectorServiceInterface   $detectorService,
     ) {
     }
 

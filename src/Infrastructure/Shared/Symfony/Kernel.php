@@ -8,7 +8,7 @@ use Symfony\Component\HttpKernel\Kernel as BaseKernel;
 /**
  * class Kernel.
  *
- * @author bernard-ng <bernard@devscast.tech>
+ * @author Trésor-ILUNGA <ilungat82@gmail.com>
  */
 class Kernel extends BaseKernel
 {

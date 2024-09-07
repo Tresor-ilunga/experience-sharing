@@ -11,7 +11,7 @@ use Domain\Shared\Entity\TimestampTrait;
 /**
  * class Link.
  *
- * @author tresor-ilunga <ilungat82@gmail.com>
+ * @author Trésor-ILUNGA <ilungat82@gmail.com>
  */
 class Link
 {

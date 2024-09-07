@@ -12,20 +12,22 @@ use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 /**
  * class UpdateLinkHandler.
  *
- * @author tresor-ilunga <ilungat82@gmail.com>
+ * @author Trésor-ILUNGA <ilungat82@gmail.com>
  */
 #[AsMessageHandler]
-final class UpdateLinkHandler
+final readonly class UpdateLinkHandler
 {
     /**
      * @param LinkRepositoryInterface $repository
      */
     public function __construct(
-        private readonly LinkRepositoryInterface $repository
+        private LinkRepositoryInterface $repository
     ) {
     }
 
     /**
+     * This method is called when the message is handled.
+     *
      * @param UpdateLinkCommand $command
      * @return void
      */

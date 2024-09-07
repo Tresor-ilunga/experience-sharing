@@ -12,11 +12,13 @@ use Doctrine\Persistence\Event\LifecycleEventArgs;
 /**
  * Class TimestampSubscriber
  *
- * @author tresor-ilunga <ilungat82@gmail.com>
+ * @author Trésor-ILUNGA <ilungat82@gmail.com>
  */
 final class TimestampSubscriber implements EventSubscriberInterface
 {
     /**
+     * This method returns an array of events this subscriber wants to listen to.
+     *
      * @return array|string[]
      */
     public function getSubscribedEvents(): array
@@ -28,6 +30,8 @@ final class TimestampSubscriber implements EventSubscriberInterface
     }
 
     /**
+     * This method is called before an entity is persisted.
+     *
      * @param LifecycleEventArgs $args
      * @return void
      */
@@ -40,6 +44,8 @@ final class TimestampSubscriber implements EventSubscriberInterface
     }
 
     /**
+     * This method is called before an entity is updated.
+     *
      * @param LifecycleEventArgs $args
      * @return void
      */

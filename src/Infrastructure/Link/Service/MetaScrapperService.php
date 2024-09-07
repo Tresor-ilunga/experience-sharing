@@ -11,11 +11,13 @@ use Embed\Embed;
 /**
  * class MetaScrapperService.
  *
- * @author tresor-ilunga <ilungat82@gmail.com>
+ * @author Trésor-ILUNGA <ilungat82@gmail.com>
  */
 final class MetaScrapperService implements MetaScrapperServiceInterface
 {
     /**
+     * This is the function that handles the command.
+     *
      * @param string $url
      * @return LinkMeta|null
      */

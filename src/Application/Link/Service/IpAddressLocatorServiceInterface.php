@@ -9,7 +9,7 @@ use Domain\Link\ValueObject\Location;
 /**
  * interface IpAddressLocatorService.
  *
- * @author tresor-ilunga <ilungat82@gmail.com>
+ * @author Trésor-ILUNGA <ilungat82@gmail.com>
  */
 interface IpAddressLocatorServiceInterface
 {

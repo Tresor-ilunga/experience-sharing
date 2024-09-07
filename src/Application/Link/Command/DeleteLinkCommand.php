@@ -9,15 +9,15 @@ use Domain\Link\Entity\Link;
 /**
  * class DeleteLinkCommand.
  *
- * @author tresor-ilunga <ilungat82@gmail.com>
+ * @author Trésor-ILUNGA <ilungat82@gmail.com>
  */
-final class DeleteLinkCommand
+final readonly class DeleteLinkCommand
 {
     /**
      * @param Link $_entity
      */
     public function __construct(
-        public readonly Link $_entity
+        public Link $_entity
     ) {
     }
 }

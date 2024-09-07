@@ -4,14 +4,15 @@ declare(strict_types=1);
 
 namespace Domain\Authentication\ValueObject;
 
+use Stringable;
 use Webmozart\Assert\Assert;
 
 /**
  * Class Role.
  *
- * @author tresor-ilunga <ilungat82@gmail.com>
+ * @author Trésor-ILUNGA <ilungat82@gmail.com>
  */
-class Roles implements \Stringable
+class Roles implements Stringable
 {
     /**
      * This is the list of roles that can be used to create a new user.

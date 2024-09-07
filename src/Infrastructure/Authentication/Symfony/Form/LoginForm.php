@@ -16,7 +16,7 @@ use Symfony\Component\Security\Csrf\CsrfTokenManagerInterface;
 /**
  * Class LoginForm.
  *
- * @author tresor-ilunga <ilungat82@gmail.com>
+ * @author Trésor-ILUNGA <ilungat82@gmail.com>
  */
 final class LoginForm extends AbstractType
 {
@@ -29,6 +29,8 @@ final class LoginForm extends AbstractType
     }
 
     /**
+     * This method configures the form
+     *
      * @param FormBuilderInterface $builder
      * @param array $options
      * @return void

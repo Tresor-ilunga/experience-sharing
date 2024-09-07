@@ -9,7 +9,7 @@ namespace Domain\Shared\Repository;
  *
  * This interface is used to define the methods that will be used in the repositories.
  *
- * @author tresor-ilunga <ilungat82@gmail.com>
+ * @author Trésor-ILUNGA <ilungat82@gmail.com>
  */
 interface DataRepositoryInterface
 {

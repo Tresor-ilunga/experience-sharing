@@ -9,9 +9,9 @@ use Domain\Link\Entity\Link;
 /**
  * class RegisterVisitCommand.
  *
- * @author tresor-ilunga <ilungat82@gmail.com>
+ * @author Trésor-ILUNGA <ilungat82@gmail.com>
  */
-final class RegisterLinkVisitCommand
+final readonly class RegisterLinkVisitCommand
 {
     /**
      * @param Link $link
@@ -21,11 +21,11 @@ final class RegisterLinkVisitCommand
      * @param array $server
      */
     public function __construct(
-        public readonly Link $link,
-        public readonly ?string $ip,
-        public readonly ?string $user_agent,
-        public readonly ?string $referer,
-        public readonly array $server
+        public Link    $link,
+        public ?string $ip,
+        public ?string $user_agent,
+        public ?string $referer,
+        public array   $server
     ) {
     }
 }

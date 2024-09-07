@@ -10,7 +10,7 @@ use Domain\Shared\Repository\DataRepositoryInterface;
 /**
  * Interface LinkRepositoryInterface.
  *
- * @author tresor-ilunga <ilungat82@gmail.com>
+ * @author Trésor-ILUNGA <ilungat82@gmail.com>
  */
 interface LinkRepositoryInterface extends DataRepositoryInterface
 {

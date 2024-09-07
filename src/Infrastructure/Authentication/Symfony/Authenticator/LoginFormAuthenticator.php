@@ -22,7 +22,7 @@ use Symfony\Component\Security\Http\Util\TargetPathTrait;
 /**
  * Class LoginFormAuthenticator
  *
- * @author tresor-ilunga <ilungat82@gmail.com>
+ * @author Trésor-ILUNGA <ilungat82@gmail.com>
  */
 final class LoginFormAuthenticator extends AbstractLoginFormAuthenticator
 {

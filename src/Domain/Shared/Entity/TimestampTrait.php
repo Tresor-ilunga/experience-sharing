@@ -13,7 +13,7 @@ use Domain\Link\Entity\LinkVisit;
 /**
  * Trait TimestampTrait.
  *
- * @author tresor-ilunga <ilungat82@gmail.com>
+ * @author Trésor-ILUNGA <ilungat82@gmail.com>
  */
 trait TimestampTrait
 {

@@ -15,7 +15,7 @@ use Throwable;
 /**
  * Class LinkVisitedListener.
  *
- * @author tresor-ilunga <ilungat82@gmail.com>
+ * @author Trésor-ILUNGA <ilungat82@gmail.com>
  */
 #[AsEventListener(LinkVisitedEvent::class)]
 final class LinkVisitedListener

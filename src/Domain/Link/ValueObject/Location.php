@@ -7,7 +7,7 @@ namespace Domain\Link\ValueObject;
 /**
  * class Location.
  *
- * @author tresor-ilunga <ilungat82@gmail.com>
+ * @author Trésor-ILUNGA <ilungat82@gmail.com>
  */
 class Location
 {

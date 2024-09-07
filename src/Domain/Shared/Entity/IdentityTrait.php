@@ -13,7 +13,7 @@ use Symfony\Component\Uid\Uuid;
 /**
  * Trait IdentityTrait.
  *
- * @author tresor-ilunga <ilungat82@gmail.com>
+ * @author Trésor-ILUNGA <ilungat82@gmail.com>
  */
 trait IdentityTrait
 {

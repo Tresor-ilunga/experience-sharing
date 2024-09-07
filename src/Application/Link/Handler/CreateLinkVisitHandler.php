@@ -16,10 +16,10 @@ use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 /**
  * class CreateLinkVisitHandler.
  *
- * @author tresor-ilunga <ilungat82@gmail.com>
+ * @author Trésor-ILUNGA <ilungat82@gmail.com>
  */
 #[AsMessageHandler]
-final class CreateLinkVisitHandler
+final readonly class CreateLinkVisitHandler
 {
     /**
      * This method is called when the message is handled.
@@ -30,10 +30,10 @@ final class CreateLinkVisitHandler
      * @param DeviceDetectorServiceInterface $detectorService
      */
     public function __construct(
-        private readonly LinkVisitRepositoryInterface $repository,
-        private readonly LinkRepositoryInterface $linkRepository,
-        private readonly IpAddressLocatorServiceInterface $ipAddressLocatorService,
-        private readonly DeviceDetectorServiceInterface $detectorService
+        private LinkVisitRepositoryInterface     $repository,
+        private LinkRepositoryInterface          $linkRepository,
+        private IpAddressLocatorServiceInterface $ipAddressLocatorService,
+        private DeviceDetectorServiceInterface   $detectorService
     ) {
     }
 

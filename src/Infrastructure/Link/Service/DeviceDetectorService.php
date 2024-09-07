@@ -14,7 +14,7 @@ use Domain\Link\ValueObject\Device;
 /**
  * class DeviceDetectorService.
  *
- * @author tresor-ilunga <ilungat82@gmail.com>
+ * @author Trésor-ILUNGA <ilungat82@gmail.com>
  */
 final class DeviceDetectorService implements DeviceDetectorServiceInterface
 {

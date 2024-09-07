@@ -12,7 +12,7 @@ use Domain\Shared\Entity\TimestampTrait;
 /**
  * class LinkVisit.
  *
- * @author tresor-ilunga <ilungat82@gmail.com>
+ * @author Trésor-ILUNGA <ilungat82@gmail.com>
  */
 class LinkVisit
 {

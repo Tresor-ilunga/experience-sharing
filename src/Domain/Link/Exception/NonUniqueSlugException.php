@@ -10,7 +10,7 @@ use Throwable;
 /**
  * Class NonUniqueSlugException.
  *
- * @author tresor-ilunga <ilungat82@gmail.com>
+ * @author Trésor-ILUNGA <ilungat82@gmail.com>
  */
 final class NonUniqueSlugException extends SafeMessageException
 {
@@ -20,6 +20,8 @@ final class NonUniqueSlugException extends SafeMessageException
     protected string $messageDomain = 'link';
 
     /**
+     * This method is used to set a message that will be shown to the user.
+     *
      * @param string $message
      * @param array $messageData
      * @param int $code

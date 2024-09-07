@@ -9,9 +9,9 @@ use Domain\Link\Entity\Link;
 /**
  * class LinkVisitedEvent.
  *
- * @author tresor-ilunga <ilungat82@gmail.com>
+ * @author Trésor-ILUNGA <ilungat82@gmail.com>
  */
-final class LinkVisitedEvent
+final readonly class LinkVisitedEvent
 {
     /**
      * @param string|null $ip
@@ -20,9 +20,9 @@ final class LinkVisitedEvent
      * @param Link $link
      */
     public function __construct(
-        public readonly ?string $ip,
-        public readonly ?string $user_agent,
-        public readonly ?array $server,
-        public readonly Link $link,
+        public ?string $ip,
+        public ?string $user_agent,
+        public ?array  $server,
+        public Link    $link,
     ){}
 }

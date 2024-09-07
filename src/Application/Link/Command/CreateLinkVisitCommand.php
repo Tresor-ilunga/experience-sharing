@@ -9,9 +9,9 @@ use Domain\Link\Entity\Link;
 /**
  * Class CreateLinkVisitCommand
  *
- * @author tresor-ilunga <ilungat82@gmail.com>
+ * @author Trésor-ILUNGA <ilungat82@gmail.com>
  */
-final class CreateLinkVisitCommand
+final readonly class CreateLinkVisitCommand
 {
     /**
      * The framework uses this constructor to instantiate the command.
@@ -22,10 +22,10 @@ final class CreateLinkVisitCommand
      * @param array|null $server
      */
     public function __construct(
-        public readonly Link $link,
-        public readonly ?string $ip,
-        public readonly ?string $user_agent,
-        public readonly ?array $server,
+        public Link    $link,
+        public ?string $ip,
+        public ?string $user_agent,
+        public ?array  $server,
     ) {
     }
 }

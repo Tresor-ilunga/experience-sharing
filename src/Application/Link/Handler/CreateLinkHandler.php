@@ -15,10 +15,10 @@ use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 /**
  * class CreateLinkHandler.
  *
- * @author tresor-ilunga <ilungat82@gmail.com>
+ * @author Trésor-ILUNGA <ilungat82@gmail.com>
  */
 #[AsMessageHandler]
-final class CreateLinkHandler
+final readonly class CreateLinkHandler
 {
     /**
      * This is the constructor of the class.
@@ -27,8 +27,8 @@ final class CreateLinkHandler
      * @param MetaScrapperServiceInterface $metaScrapperService
      */
     public function __construct(
-        private readonly LinkRepositoryInterface $repository,
-        private readonly MetaScrapperServiceInterface $metaScrapperService
+        private LinkRepositoryInterface      $repository,
+        private MetaScrapperServiceInterface $metaScrapperService
     ) {
     }
 
